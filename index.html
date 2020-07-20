@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle registrations</title>
+    <!--link my css file -->
+<link rel="stylesheet" href="Css/registration_number.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="topRow">
+            <h1>Registration Numbers</h1>
+        </div>
+        <div class="examples">
+            <h2>e.g CY 123-456 | CA 345-673 | CL 876-895 </h2>
+        </div>
+        <div class="bottomRow">
+            <div class="errors">
+                <p></p>
+			</div>
+         <input type="text" name="" value="" placeholder="enter a registration" class="inputText" id="registration">
+
+        </div>
+      <div class="buttonRow">
+        <button class="button-primary Addbtn" on type="button" name="button">Add Registrations</button>
+      </div>
+     <br/>
+     <div class="townRow">
+         <h3>Select a Town:</h3>
+          <form class="selectTown" name="post" action="">
+            <select name="towns" class="towns">
+                <option value="alltowns">All Towns</option>
+                <option value="bellville">Bellville</option>
+                <option value="cape town">Cape Town</option>
+                <option value="stellenbosch">Stellenbosch</option>
+            </select>  
+          </form>  
+     </div>
+     <br/>
+     <div class="buttonRow">
+         <button class=" button-primary resetBtn" on type="button" name="button">Reset </button>
+     </div>
+     <br/>
+     <hr>
+     <div>
+        <ul class="displayHere">
+
+        </ul>
+     </div>
+    </div>
+</body>
+<script src="Js/registration_number.js" charset="utf-8"></script>
+<script src="Js/registration_number-dom.js" charset="utf-8"></script>
+</html>
