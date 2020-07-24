@@ -1,49 +1,66 @@
 const addBtn = document.querySelector(".Addbtn");
 const resetBtn = document.querySelector(".resetBtn");
+const filterBtn = document.querySelector(".filterBtn")
 const displayArea = document.querySelector(".displayHere");
 const selectedTowns = document.querySelector(".towns");
 const TextBox = document.querySelector(".inputText");
 const errors = document.querySelector(".errors")
 
 
-var regStorage = localStorage.getItem('regEntered') ? JSON.parse(localStorage.getItem('regEntered')) : [];
-var registrations = regNumbers(regStorage);
+let allItems = [];
 
-function display(reg){
+function addValues(){
+     let theValue = "new element"
+     if (TextBox.value){
+         theValue = TextBox.value
+     }
+    allItems.push(theValue);
+
+}
+
+// my filter function
+function filteredTowns() {
+    displayArea.innerHTML = ""
+    
+    var currentTown = selectedTowns.options[selectedTowns.selectedIndex].value;  
+    const filteredItems = [];
+    
+    for (var i = 0; i < allItems.length; i++) {
+        var currentItem = allItems[i];
+        if (currentItem.startsWith(currentTown)) {
+            filteredItems.push(currentItem)
+        }
+    }
+        
+    displayTowns(filteredItems);
+    
+}
+
+function displayTowns(reg){
     const newElement = document.createElement("li");
     newElement.innerHTML = reg;
 
     displayArea.insertBefore(newElement, displayArea.childNodes[0]); 
-
+    
 }
 
-function displayRegistrations(){
+function registrations(){
     var regUser = TextBox.value
      
-
-
     if(regUser == ""){
-        errors.innerHTML = "Please enter a registration number below"
+        errors.innerHTML = "Please enter a Registration number below"
         return;
     }
-    //displayArea.innerHTML = regUser
-    display(regUser);
-    //const newElement = document.createElement("li");
-    //if (regUser) {
-       // newElement.innerHTML = regUser; 
-    //} else  {
-        //newElement.innerHTML = "old element";
-        //displayArea.appendChild(newElement);   
-    //}
+
+    displayTowns(regUser);
+    addValues(regUser)
 }
 
-
-function clear(){
-    registrations.clearItems();
-    displayArea.innerHTML = "My new element";
-    
-
-}
-resetBtn.addEventListener("click", clear);
-addBtn.addEventListener("click", displayRegistrations);
+resetBtn.addEventListener("click", function () {
+    // clear all the list items from displaybox
+    displayArea.innerHTML = "";
+    allItems = [];
+})
+filterBtn.addEventListener("click", filteredTowns);
+addBtn.addEventListener("click", registrations);
 

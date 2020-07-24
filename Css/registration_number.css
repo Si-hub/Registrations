@@ -34,16 +34,15 @@ body{
     border-radius: 5px;
     box-sizing: border-box;
     height: 28px;
-    border: 0.1em solid;
     cursor: pointer;
     text-align: center;
-     
+    border: 0.1em solid lightblue;
 }
 
 .button-primary:hover{
     color: white;
-    background-color: #1EAEDB;
-    border: #1EAEDB;
+    background-color: green;
+    
 }
 
 .examples{
@@ -58,4 +57,16 @@ body{
 ul{
     margin: 0em;
     padding: 0em;
+}
+
+li{
+    list-style: none;
+			padding: 1em;
+			background-color: rgb(231, 231, 22);
+			width: 10em;
+			border: 0.1em solid black;
+			margin: 0.5em; /* Make space between elements*/
+            float: left;
+            border-radius: 5px;
+            list-style: none;
 }

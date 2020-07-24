@@ -27,30 +27,31 @@
         <button class="button-primary Addbtn" on type="button" name="button">Add Registrations</button>
       </div>
      <br/>
-     <div class="townRow">
+     <div>
          <h3>Select a Town:</h3>
-          <form class="selectTown" name="post" action="">
+          <div class="selectTown">
             <select name="towns" class="towns">
-                <option value="alltowns">All Towns</option>
-                <option value="bellville">Bellville</option>
-                <option value="cape town">Cape Town</option>
-                <option value="stellenbosch">Stellenbosch</option>
+                <option value="All">All Towns</option>
+                <option value="CY">Bellville</option>
+                <option value="CA">Cape Town</option>
+                <option value="CL">Stellenbosch</option>
             </select>  
-          </form>  
+        </div>  
      </div>
      <br/>
-     <div class="buttonRow">
+     <div>
          <button class=" button-primary resetBtn" on type="button" name="button">Reset </button>
+         <button class="button-primary filterBtn" on type="button" name="button">Filter</button>
      </div>
      <br/>
      <hr>
      <div>
-        <ul class="displayHere">
-
+        <ul class="displayHere">    
         </ul>
      </div>
+
     </div>
 </body>
-<script src="Js/registration_number.js" charset="utf-8"></script>
+
 <script src="Js/registration_number-dom.js" charset="utf-8"></script>
 </html>
